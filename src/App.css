@@ -13,27 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .App-background{
   display: flex;
   width: 100%;
@@ -49,7 +28,7 @@
 .buttonpro {
   
     bottom: 10%;
-  --btn-default-bg: black;
+  /*--btn-default-bg: ;*/
   --btn-padding: 15px 20px;
   --btn-hover-bg: green;
   --btn-transition: 0.3s;
@@ -210,8 +189,10 @@
 }
 
 .card {
-  width: 190px;
-  height: 254px;
+  margin-top: 1%;
+  margin-bottom: 4%;
+  width: 400px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,7 +205,7 @@
   cursor: pointer;
   font-weight: 900;
   transition-duration: .2s;
-  background: linear-gradient(0deg, #000, #272727);
+  background: linear-gradient(0deg, #000, #000);
 }
 
 .card:before, .card:after {
@@ -233,12 +214,22 @@
   left: -2px;
   top: -2px;
   border-radius: 10px;
-  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, 
-    #0000ff, #00ff00, #ffff00, #ff0000);
+  background: linear-gradient(45deg,
+  #004d00, /* Dark Green */
+  #006600, /* Pakistan Green */
+  #007300, /* MSU Green */
+  #008000, /* Office Green */
+  #228b22, /* Forest Green */
+  #006400, /* DarkGreen */
+  #2f4f4f, /* DarkSlateGrey */
+  #013220, /* Dark Green (NCS) */
+  #0b6623, /* Jungle Green */
+  #014421  /* UP Forest Green */
+);
   background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
+  width: calc(90% );
+  height: calc(90%);
+  z-index: 0;
   animation: steam 20s linear infinite;
 }
 
@@ -258,6 +249,16 @@
 
 .card:after {
   filter: blur(100px);
+}
+
+.cardImg{
+  flex: 1;
+  width: fit-content;
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+  border-radius: 10px;
+
 }
 
 

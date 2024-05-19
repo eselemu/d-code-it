@@ -5,9 +5,11 @@ function App() {
     <div className="App">
       <header className="App-background">
         {/* Background image is set in CSS, no need for img tag here */}
+        
+        <p>LOGOS HERE</p>
+        <div className="card">
+          <img src={"/img/Adidas.png"} className='cardImg' alt='img' />
 
-        <div class="card">
-          <p>LOGOS HERE</p>
         </div>
 
         <div>
@@ -17,7 +19,7 @@ function App() {
         </div>
 
 
-      
+
       </header>
     </div>
   );
