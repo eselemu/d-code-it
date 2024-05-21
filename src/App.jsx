@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import data from './API/API.json';
 
 let logos = [
   {
@@ -244,11 +243,16 @@ let logos = [
 
 function App() {
   const [logoIndex, setLogoIndex] = useState(0);
-  const [shText, setText] = useState("")
+  const [shText, setText] = useState(logos[logoIndex % logos.length].coded);
 
-  function handleClick(event) {
+  function handleClickNext(event) {
 		event.preventDefault();
     setLogoIndex(logoIndex + 1);
+    setText(logos[logoIndex % logos.length].coded);
+	}
+  function handleClickDecode(event) {
+		event.preventDefault();
+    setText(logos[logoIndex % logos.length].name);
 	}
   return (
     <div className="App">
@@ -257,22 +261,22 @@ function App() {
         
         <p>LOGOS HERE</p>
         <div className="card">
-          <img src={"/img/" + logos[logoIndex % logos.length] + ".png"} className='cardImg' alt='img' />
+          <img src={"/img/" + logos[logoIndex % logos.length].name + ".png"} className='cardImg' alt='img' />
         </div>
-
+        <div className='txt'>
+          <h1>{shText}</h1>
+        </div>
         <div>
-          <button className="buttonpro" onClick={handleClick}>
+          <button className="buttonpro" onClick={handleClickNext}>
             <span> NEXT </span>
           </button>
         </div>
 
         <div>
-          <button className="buttonpro" onClick={handleClick}>
+          <button className="buttonpro" onClick={handleClickDecode}>
             <span> DECODE </span>
           </button>
         </div>
-
-
 
       </header>
     </div>
