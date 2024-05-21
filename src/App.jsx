@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import data from './API/API.json';
 
 let logos = [
   {
@@ -256,11 +257,7 @@ function App() {
         
         <p>LOGOS HERE</p>
         <div className="card">
-          <img src={"/img/" + logos[logoIndex % logos.length].name + ".png"} className='cardImg' alt='img' />
-
-        </div>
-        <div className='txt'>
-          <h1>{logos[logoIndex % logos.length].coded.join('')}</h1>
+          <img src={"/img/" + logos[logoIndex % logos.length] + ".png"} className='cardImg' alt='img' />
         </div>
 
         <div>
