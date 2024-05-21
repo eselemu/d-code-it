@@ -26,10 +26,9 @@
 }
 
 .buttonpro {
-  
     bottom: 10%;
-  /*--btn-default-bg: ;*/
-  --btn-padding: 15px 20px;
+  --btn-default-bg: black;
+  --btn-padding: 15px 200px;
   --btn-hover-bg: green;
   --btn-transition: 0.3s;
   --btn-letter-spacing: 0.1rem;
@@ -189,15 +188,15 @@
 }
 
 .card {
-  margin-top: 1%;
-  margin-bottom: 4%;
+  margin-top: 0%;
+  margin-bottom: 3%;
   width: 400px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 0px 15px;
+  padding: 0px 0px;
   border-radius: 10px;
   border: none;
   color: white;
@@ -212,7 +211,7 @@
   content: '';
   position: absolute;
   left: -2px;
-  top: -2px;
+  top: 0px;
   border-radius: 10px;
   background: linear-gradient(45deg,
   #004d00, /* Dark Green */
@@ -227,8 +226,8 @@
   #014421  /* UP Forest Green */
 );
   background-size: 400%;
-  width: calc(90% );
-  height: calc(90%);
+  width: calc(100% );
+  height: calc(100%);
   z-index: 0;
   animation: steam 20s linear infinite;
 }
@@ -254,8 +253,8 @@
 .cardImg{
   flex: 1;
   width: fit-content;
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   border-radius: 10px;
 
