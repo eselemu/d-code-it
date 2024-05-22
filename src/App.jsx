@@ -249,6 +249,7 @@ function App() {
   useEffect(() => {
       if (timeLeft === 0) {
           alert('¡El tiempo se ha acabado!');
+          setText(logos[logoIndex % logos.length].name);
           return;
       }
 
