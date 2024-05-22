@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 
 let logos = [
@@ -39,7 +39,7 @@ let logos = [
     "coded": [100960, 699798, 826222]
   },
   {
-    "name": "CocaCola",
+    "name": "Coca Cola",
     "coded": [690618, 266591, 815972]
   },
   {
@@ -54,16 +54,16 @@ let logos = [
     "name": "Twitter",
     "coded": [242203, 880114, 363530]
   },
-  {
-    "name": "Sony",
-    "coded": [528695, 318491]
-  },
+  // {
+  //   "name": "Sony",
+  //   "coded": [528695, 318491]
+  // },
   {
     "name": "Burger King",
     "coded": [1, 526184, 496910, 733172]
   },
   {
-    "name": "Red Bull",
+    "name": "Red Bulls",
     "coded": [160905, 640676, 743621]
   },
   {
@@ -234,21 +234,37 @@ let logos = [
     "name": "Avis",
     "coded": [660815, 682115, 310459, 667721]
   },
-  {
-    "name": "Nvidia",
-    "coded": [836562, 1013202, 338676]
-  }
+  // {
+  //   "name": "Nvidia",
+  //   "coded": [836562, 1013202, 338676]
+  // }
 ];
 
 
 function App() {
   const [logoIndex, setLogoIndex] = useState(0);
   const [shText, setText] = useState(logos[logoIndex % logos.length].coded);
+  const [timeLeft, setTimeLeft] = useState(5);
+
+  useEffect(() => {
+      if (timeLeft === 0) {
+          alert('¡El tiempo se ha acabado!');
+          return;
+      }
+
+      const timerId = setInterval(() => {
+          setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
+      }, 1000);
+
+      return () => clearInterval(timerId);
+  }, [timeLeft]);
+
 
   function handleClickNext(event) {
 		event.preventDefault();
     setLogoIndex(logoIndex + 1);
     setText(logos[logoIndex % logos.length].coded);
+    setTimeLeft(5)
 	}
   function handleClickDecode(event) {
 		event.preventDefault();
@@ -278,6 +294,9 @@ function App() {
           </button>
         </div>
 
+          <div style={{position: "absolute", marginLeft : "900px", marginTop : "100px"}}>
+            <h1 style={{color: timeLeft>2 ?  "white": "red"}}>Tiempo restante: <br/> {timeLeft} segundos</h1>
+          </div>
       </header>
     </div>
   );
